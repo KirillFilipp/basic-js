@@ -14,12 +14,12 @@ const chainMaker = {
     //}
   },
   removeLink(position) {
-    if (typeof position == 'number' || position !== 0 || (position ^ 0) === position || this.chainArr.length >= position) {
-      this.chainArr.splice((position - 1), 1);
-      return this;
-    } else {
+    if (typeof position !== 'number' || position < 1 || (position ^ 0) !== position || this.chainArr.length < position) {
       this.chainArr = [];
       throw new Error('error');
+    } else {
+      this.chainArr.splice((position - 1), 1);
+      return this;
     }
   },
   reverseChain() {
