@@ -26,7 +26,7 @@ module.exports = function repeater(str, options) {
     if (options.addition) {
         addition = options.addition.toString();
         for (let i = 0; i < additionRepeatTimes; i++) {
-            additionResult.push(addition.concat(additionSeparator));
+            additionResult.push(addition);
         }
         addition = additionResult.join(additionSeparator);
     } else {
@@ -39,18 +39,9 @@ module.exports = function repeater(str, options) {
         separator = '+';
     }
 
-
-
-
-
-
     for (let i = 0; i < repeatTimes; i++) {
         result.push(string.concat(addition));
     }
-
-
-
-
 
     return result.join(separator);
 };
