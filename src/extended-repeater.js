@@ -1,7 +1,7 @@
 module.exports = function repeater(str, options) {
     let result = [];
     const additionResult = [];
-    let string = str.toString();
+    let string = String(str);
 
     let addition, additionRepeatTimes, separator, repeatTimes, additionSeparator;
 
@@ -23,8 +23,8 @@ module.exports = function repeater(str, options) {
         additionRepeatTimes = 1;
     }
 
-    if (options.addition) {
-        addition = options.addition.toString();
+    if (options.addition || options.addition === false || options.addition === null) {
+        addition = String(options.addition);
         for (let i = 0; i < additionRepeatTimes; i++) {
             additionResult.push(addition);
         }
